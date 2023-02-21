@@ -1,11 +1,11 @@
 # open csv file
 import os
 import csv
-csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
+csvpath = os.path.join("./Resources/budget_data.csv")
 
 with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvflie, delimiter=',')
-    print(csvreader)
+    csvreader = csv.reader(csvfile, delimiter=',')
+    #print(next(csvreader)) #printed header row just to see if path worked and it did 
 
 
 
