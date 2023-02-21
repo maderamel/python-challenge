@@ -7,15 +7,14 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     #print(next(csvreader)) #printed header row just to see if path worked and it did 
 
-
-
+    #skip the header
+    csv_header = next (csvfile)
 
 # calculate total number of months included in dataset
-
-
+    print(len(list(csvreader)))
 
 #calculate net total of profit/losses over entire perios
-
+    
 
 # changes in profit/losses over entire period then average
 
