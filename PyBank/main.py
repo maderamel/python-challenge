@@ -3,24 +3,37 @@ import os
 import csv
 csvpath = os.path.join("./Resources/budget_data.csv")
 
-
-netPL = 0
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    #print(next(csvreader)) #printed header row just to see if path worked and it did 
 
     #skip the header
     csv_header = next (csvfile)
 
+#print analysis title and break
+    print("Financial Analysis")
+    print("----------------------------")
 # calculate total number of months included in dataset
     print("Total Months: ", len(list(csvreader)))
 
-#calculate net total of profit/losses over entire perios
-    profitLoss = csvreader
-    for row in profitLoss:
-        if not str(row[1]).startswith ('P'):
-            profitLoss = profitLoss+ int(row[1])
-    print(profitLoss)
+#calculate net total of profit/losses over entire period   
+    #iterates over csvreader again
+    csvfile.seek(0)
+    next(csvreader)
+
+    sum_profit = 0
+    sum_loss = 0
+    totalPL = 0
+    profitLoss = 0
+
+    for row in csvreader:
+        profitLoss = int(row[1])
+        if profitLoss > 0:
+            sum_profit = sum_profit + profitLoss
+        elif profitLoss < 0:
+            sum_loss = sum_loss + profitLoss
+    totalPL = sum_profit -sum_loss
+
+    print(totalPL)
     
 
 
