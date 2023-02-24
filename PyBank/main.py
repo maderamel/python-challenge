@@ -48,10 +48,7 @@ with open(csvpath) as csvfile:
     maxDec = min(avgChangeList)
     
     if maxInc:
-        maxVal = avgChangeList(row[1])
-        maxMonth = avgChangeList(row[0])
-        print (maxVal)
-        print (maxMonth)
+        maxMonth = (row[0])
 
     if maxDec:
         minMonth = (row[0])
@@ -59,8 +56,8 @@ with open(csvpath) as csvfile:
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
     print(average)
-    print(f"Greatest increase in Profits: {maxMonth} (${maxInc})")
-    print(f"Greatest Decrese in Profits: {minMonth} (${maxDec})")
+    print(f"Greatest Increase in Profits: {maxMonth} (${maxInc})")
+    print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})")
     
 # changes in profit/losses over entire period then average
 
