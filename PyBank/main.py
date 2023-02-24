@@ -24,13 +24,18 @@ with open(csvpath) as csvfile:
     totalMonths = 0
     averageChange = 0
     #avgMonths = 0
+    previous_value = 1088983
+    avgChangeList = []
 
     for row in csvreader:
+        #for total month and total p/l
         profitLoss = 0
         totalMonths = totalMonths + 1 
         profitLoss = int(row[1]) + profitLoss
-        averageChange = int(row[1]) - averageChange
-        avgChangeList = [averageChange]
+        #for average change & max/min profits
+        averageChange = int(row[1]) - previous_value
+        previous_value = int(row[1])
+        avgChangeList += [averageChange]
 
         #avgMonths = avgMonths + 1
         if profitLoss > 0:
@@ -38,12 +43,13 @@ with open(csvpath) as csvfile:
         elif profitLoss < 0:
             sum_loss = sum_loss + profitLoss
     totalPL = sum_profit + sum_loss
-    average = round(sum(avgChangeList)/len(avgChangeList), 2)
+    average = round(sum(avgChangeList)/(len(avgChangeList)-1), 2)
 
     print(f"Total Months: {totalMonths}")
-    print(totalPL)
+    print(f"Total: ${totalPL}")
     print(average)
-    print(avgChangeList)
+    print(max(avgChangeList))
+    print(min(avgChangeList))
     
 # changes in profit/losses over entire period then average
 
