@@ -43,14 +43,18 @@ with open(csvpath) as csvfile:
             sum_loss = sum_loss + profitLoss
     totalPL = sum_profit + sum_loss
     average = round(sum(avgChangeList)/(len(avgChangeList)-1), 2)
- 
-    for [] in avgChangeList:
-     maxInc = max(avgChangeList)
-     maxDec = min(avgChangeList)
-     if maxInc:
-        maxMonth = int(row[0])
-     elif maxDec:
-        minMonth = int(row[0])
+
+    maxInc = max(avgChangeList)
+    maxDec = min(avgChangeList)
+    
+    if maxInc:
+        maxVal = avgChangeList(row[1])
+        maxMonth = avgChangeList(row[0])
+        print (maxVal)
+        print (maxMonth)
+
+    if maxDec:
+        minMonth = (row[0])
 
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
