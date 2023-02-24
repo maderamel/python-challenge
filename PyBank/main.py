@@ -23,7 +23,6 @@ with open(csvpath) as csvfile:
     #total number months in dataset
     totalMonths = 0
     averageChange = 0
-    #avgMonths = 0
     previous_value = 1088983
     avgChangeList = []
 
@@ -44,12 +43,20 @@ with open(csvpath) as csvfile:
             sum_loss = sum_loss + profitLoss
     totalPL = sum_profit + sum_loss
     average = round(sum(avgChangeList)/(len(avgChangeList)-1), 2)
+ 
+    for [] in avgChangeList:
+     maxInc = max(avgChangeList)
+     maxDec = min(avgChangeList)
+     if maxInc:
+        maxMonth = int(row[0])
+     elif maxDec:
+        minMonth = int(row[0])
 
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
     print(average)
-    print(max(avgChangeList))
-    print(min(avgChangeList))
+    print(f"Greatest increase in Profits: {maxMonth} (${maxInc})")
+    print(f"Greatest Decrese in Profits: {minMonth} (${maxDec})")
     
 # changes in profit/losses over entire period then average
 
