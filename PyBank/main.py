@@ -12,31 +12,39 @@ with open(csvpath) as csvfile:
 #print analysis title and break
     print("Financial Analysis")
     print("----------------------------")
-# calculate total number of months included in dataset
-    print("Total Months: ", len(list(csvreader)))
 
 #calculate net total of profit/losses over entire period   
     #iterates over csvreader again
-    csvfile.seek(0)
-    next(csvreader)
-
+    #csvfile.seek(0)
+    #ext(csvreader)
+    
     sum_profit = 0
     sum_loss = 0
-    totalPL = 0
-    profitLoss = 0
+    #total number months in dataset
+    totalMonths = 0
+    averageChange = 0
+    #avgMonths = 0
 
     for row in csvreader:
-        profitLoss = int(row[1])
+        profitLoss = 0
+        totalMonths = totalMonths + 1 
+        profitLoss = int(row[1]) + profitLoss
+        averageChange = int(row[1]) - averageChange
+        avgChangeList = [averageChange]
+
+        #avgMonths = avgMonths + 1
         if profitLoss > 0:
             sum_profit = sum_profit + profitLoss
         elif profitLoss < 0:
             sum_loss = sum_loss + profitLoss
-    totalPL = sum_profit -sum_loss
+    totalPL = sum_profit + sum_loss
+    average = round(sum(avgChangeList)/len(avgChangeList), 2)
 
+    print(f"Total Months: {totalMonths}")
     print(totalPL)
+    print(average)
+    print(avgChangeList)
     
-
-
 # changes in profit/losses over entire period then average
 
 
