@@ -3,6 +3,7 @@ import os
 import csv
 csvpath = os.path.join("./Resources/budget_data.csv")
 
+#read csv file
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -12,22 +13,19 @@ with open(csvpath) as csvfile:
 #print analysis title and break
     print("Financial Analysis")
     print("----------------------------")
-
-#calculate net total of profit/losses over entire period   
-    #iterates over csvreader again
-    #csvfile.seek(0)
-    #ext(csvreader)
-    
+    #set profit & loss equal to 0
     sum_profit = 0
     sum_loss = 0
-    #total number months in dataset
+    # variables for total number months in dataset
     totalMonths = 0
     averageChange = 0
     previous_value = 1088983
+    # list to hold change values
     avgChangeList = []
 
+    # loop through file
     for row in csvreader:
-        #for total month and total p/l
+        #variables for total month and total p/l
         profitLoss = 0
         totalMonths = totalMonths + 1 
         profitLoss = int(row[1]) + profitLoss
@@ -36,7 +34,7 @@ with open(csvpath) as csvfile:
         previous_value = int(row[1])
         avgChangeList += [averageChange]
 
-        #avgMonths = avgMonths + 1
+        #to differentiate between profit and loss values
         if profitLoss > 0:
             sum_profit = sum_profit + profitLoss
         elif profitLoss < 0:
@@ -44,25 +42,20 @@ with open(csvpath) as csvfile:
     totalPL = sum_profit + sum_loss
     average = round(sum(avgChangeList)/(len(avgChangeList)-1), 2)
 
+    #iterate through avg change list for max/min
     maxInc = max(avgChangeList)
     maxDec = min(avgChangeList)
     
-    if maxInc:
+    #to match max/min to corresponding month
+    if row[1] == maxInc:
         maxMonth = (row[0])
 
     if maxDec:
         minMonth = (row[0])
 
+    #print analysis
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
     print(average)
     print(f"Greatest Increase in Profits: {maxMonth} (${maxInc})")
-    print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})")
-    
-# changes in profit/losses over entire period then average
-
-
-# the greatest increase in profits (date & amount) over entire period
- 
-
-# the greatest decrease in profits (date & amount) over entire period  
+    print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})") 
