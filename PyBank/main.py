@@ -22,6 +22,7 @@ with open(csvpath) as csvfile:
     previous_value = 1088983
     # list to hold change values
     avgChangeList = []
+    monthList = []
 
     # loop through file
     for row in csvreader:
@@ -33,25 +34,26 @@ with open(csvpath) as csvfile:
         averageChange = int(row[1]) - previous_value
         previous_value = int(row[1])
         avgChangeList += [averageChange]
+        monthList += [row[0]]
 
         #to differentiate between profit and loss values
         if profitLoss > 0:
             sum_profit = sum_profit + profitLoss
         elif profitLoss < 0:
             sum_loss = sum_loss + profitLoss
+            
     totalPL = sum_profit + sum_loss
     average = round(sum(avgChangeList)/(len(avgChangeList)-1), 2)
 
     #iterate through avg change list for max/min
     maxInc = max(avgChangeList)
     maxDec = min(avgChangeList)
-    
-    #to match max/min to corresponding month
-    if row[1] == maxInc:
-        maxMonth = (row[0])
 
-    if maxDec:
-        minMonth = (row[0])
+    for i in range(len(avgChangeList)):
+        if avgChangeList[i] == maxInc:
+            maxMonth = monthList[i]
+        if avgChangeList[i] == maxDec:
+            minMonth = monthList[i]
 
     #print analysis
     print(f"Total Months: {totalMonths}")
