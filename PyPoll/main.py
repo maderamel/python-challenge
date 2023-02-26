@@ -17,21 +17,19 @@ with open(csvpath) as csvfile:
     #variables
     totalBallots = 0
     fullCandidateList = []
+    candidateList = []
 
     for row in csvreader:
         totalBallots = totalBallots + 1
         
         fullCandidateList = [(row[2])]
         
-        print(fullCandidateList)
-        candidateList = []
         
         for i in fullCandidateList:
             if i not in candidateList:
                 candidateList.append(i)
 
-    for i in candidateList:
-        print(i)
+    print(candidateList)
 
     
 
