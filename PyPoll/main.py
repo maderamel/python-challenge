@@ -30,13 +30,15 @@ with open(csvpath) as csvfile:
             if i not in candidateList:
                 candidateList.append(i)
 
-    print(candidateList)
-
     
 
 
     print(f"Total Votes: {totalBallots}")
     print("----------------------------")
-
-
+    print(f"{candidateList[0]}: ")
+    print(f"{candidateList[1]}: ")
+    print(f"{candidateList[2]}: ")
+    print("----------------------------")
+    print(f"Winner: ")
+    print("----------------------------")
 
