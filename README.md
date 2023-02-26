@@ -3,7 +3,6 @@ Module 3 Python Challenge
 
 ## Objectives
 The overall ojective of this assignment was to use python to analyze given csv files. 
-
 For each csv file, the code needed to:
 1. read in the csv files
 2. print out results correctly to terminal
@@ -14,6 +13,7 @@ For each csv file, the code needed to:
 ## Results
 
 **PyBank**
+
 Terminal Results
 
 ![This is a screenshot of PyBank results in terminal](https://github.com/maderamel/python-challenge/blob/d620e24853e98f98059abd4314c7879dcae1376a/PyBank/Resources/PyBank_Terminal.png)
@@ -21,6 +21,7 @@ Terminal Results
 Text File Results
 
 **PyPoll**
+
 Terminal Results
 
 ![This is a screenshot of PyPoll results in terminal](https://github.com/maderamel/python-challenge/blob/d620e24853e98f98059abd4314c7879dcae1376a/PyPoll/Resources/PyPoll_Terminal.png)
