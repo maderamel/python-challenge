@@ -62,6 +62,7 @@ with open(csvpath) as csvfile:
     totalslist = [totalCharles, totalDiana, totalRaymon]
     winnerVal = max(totalslist)
 
+    #match highest total with candidate
     for i in range(len(totalslist)):
         if totalslist[i] == winnerVal:
             winner = candidateList[i]
