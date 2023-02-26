@@ -9,3 +9,35 @@ with open(csvpath) as csvfile:
 
     #skip the header
     csv_header = next (csvfile)
+
+    #print analysis title and break
+    print("Election Results")
+    print("----------------------------")
+
+    #variables
+    totalBallots = 0
+    fullCandidateList = []
+
+    for row in csvreader:
+        totalBallots = totalBallots + 1
+        
+        fullCandidateList = [(row[2])]
+        
+        print(fullCandidateList)
+        candidateList = []
+        
+        for i in fullCandidateList:
+            if i not in candidateList:
+                candidateList.append(i)
+
+    for i in candidateList:
+        print(i)
+
+    
+
+
+    print(f"Total Votes: {totalBallots}")
+    print("----------------------------")
+
+
+
