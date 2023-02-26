@@ -21,6 +21,12 @@ with open(csvpath) as csvfile:
     percentCharles = 0
     totalCharles = 0
     counterCharles = []
+    percentDiana = 0
+    totalDiana = 0
+    counterDiana = []
+    percentRaymon = 0
+    totalRaymon = 0
+    counterRaymon = []
 
     for row in csvreader:
         totalBallots = totalBallots + 1
@@ -36,8 +42,18 @@ with open(csvpath) as csvfile:
         for i in fullCandidateList:
             if i == candidateList[0]:
                 counterCharles += [i]
+            elif i == candidateList[1]:
+                counterDiana += [i]
+            elif i == candidateList[2]:
+                counterRaymon += [i]
         totalCharles = len(counterCharles)
         percentCharles = round((totalCharles/totalBallots)*100, 3)
+
+        totalDiana = len(counterDiana)
+        percentDiana = round((totalDiana/totalBallots)*100, 3)
+
+        totalRaymon = len(counterRaymon)
+        percentRaymon = round((totalRaymon/totalBallots)*100, 3)
 
 
     
@@ -46,8 +62,8 @@ with open(csvpath) as csvfile:
     print(f"Total Votes: {totalBallots}")
     print("----------------------------")
     print(f"{candidateList[0]}: {percentCharles}% ({totalCharles})")
-    print(f"{candidateList[1]}: ")
-    print(f"{candidateList[2]}: ")
+    print(f"{candidateList[1]}: {percentDiana}% ({totalDiana})")
+    print(f"{candidateList[2]}: {percentRaymon}% ({totalRaymon})")
     print("----------------------------")
     print(f"Winner: ")
     print("----------------------------")
