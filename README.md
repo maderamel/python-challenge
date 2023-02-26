@@ -1,7 +1,7 @@
 # python-challenge
 Module 3 Python Challenge
 
-##Objectives
+## Objectives
 The overall ojective of this assignment was to use python to analyze given csv files. 
 
 For each csv file, the code needed to:
@@ -11,7 +11,7 @@ For each csv file, the code needed to:
 4. export the results to a text file
 5. be cleaned and commented
 
-##Results
+## Results
 
 **PyBank**
 Terminal Results
