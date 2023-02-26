@@ -61,10 +61,10 @@ with open(csvpath) as csvfile:
     #to find winner
     totalslist = [totalCharles, totalDiana, totalRaymon]
     winnerVal = max(totalslist)
-    for i in totalslist:
-        if totalslist[i] == winnerVal:
-            winner = totalslist[i]
 
+    for i in range(len(totalslist)):
+        if totalslist[i] == winnerVal:
+            winner = candidateList[i]
 
     print(f"Total Votes: {totalBallots}")
     print("----------------------------")
