@@ -18,6 +18,9 @@ with open(csvpath) as csvfile:
     totalBallots = 0
     fullCandidateList = []
     candidateList = []
+    percentCharles = 0
+    totalCharles = 0
+    counterCharles = []
 
     for row in csvreader:
         totalBallots = totalBallots + 1
@@ -29,13 +32,20 @@ with open(csvpath) as csvfile:
         for i in fullCandidateList:
             if i not in candidateList:
                 candidateList.append(i)
+    
+        for i in fullCandidateList:
+            if i == candidateList[0]:
+                counterCharles += [i]
+        totalCharles = len(counterCharles)
+        percentCharles = round((totalCharles/totalBallots)*100, 3)
+
 
     
 
 
     print(f"Total Votes: {totalBallots}")
     print("----------------------------")
-    print(f"{candidateList[0]}: ")
+    print(f"{candidateList[0]}: {percentCharles}% ({totalCharles})")
     print(f"{candidateList[1]}: ")
     print(f"{candidateList[2]}: ")
     print("----------------------------")
