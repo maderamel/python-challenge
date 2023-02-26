@@ -38,7 +38,8 @@ with open(csvpath) as csvfile:
         for i in fullCandidateList:
             if i not in candidateList:
                 candidateList.append(i)
-    
+        
+        #add to counter for each candidate to track vote counts 
         for i in fullCandidateList:
             if i == candidateList[0]:
                 counterCharles += [i]
@@ -46,6 +47,8 @@ with open(csvpath) as csvfile:
                 counterDiana += [i]
             elif i == candidateList[2]:
                 counterRaymon += [i]
+        
+        #len counter for vote counts & vote count/total ballots for %
         totalCharles = len(counterCharles)
         percentCharles = round((totalCharles/totalBallots)*100, 3)
 
