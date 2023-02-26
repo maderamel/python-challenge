@@ -58,6 +58,17 @@ with open(csvpath) as csvfile:
     #print analysis
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
-    print(average)
+    print(f"Average Change: {average}")
     print(f"Greatest Increase in Profits: {maxMonth} (${maxInc})")
-    print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})") 
+    print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})")
+    
+    #create output file
+    output = (
+        f"Total Months: {totalMonths}"
+        f"Total: ${totalPL}"
+        f"Average Change: {average}"
+        f"Greatest Increase in Profits: {maxMonth} (${maxInc})"
+        f"Greatest Decrease in Profits: {minMonth} (${maxDec})"
+        )
+    with open(PyBank_txt, 'w') as txtfile:
+        txtfile.write(output)
