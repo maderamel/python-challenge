@@ -22,9 +22,10 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         totalBallots = totalBallots + 1
         
+        #makes candidate column a list
         fullCandidateList = [(row[2])]
         
-        
+        #look through candidate column list to get new unique list
         for i in fullCandidateList:
             if i not in candidateList:
                 candidateList.append(i)
