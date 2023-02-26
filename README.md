@@ -15,11 +15,13 @@ For each csv file, the code needed to:
 
 **PyBank**
 Terminal Results
+![This is a screenshot of PyBank results in terminal](https://github.com/maderamel/python-challenge/blob/d620e24853e98f98059abd4314c7879dcae1376a/PyBank/Resources/PyBank_Terminal.png)
 
 Text File Results
 
 **PyPoll**
 Terminal Results
+![This is a screenshot of PyPoll results in terminal](https://github.com/maderamel/python-challenge/blob/d620e24853e98f98059abd4314c7879dcae1376a/PyPoll/Resources/PyPoll_Terminal.png)
 
 Text File Results
 
