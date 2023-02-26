@@ -48,18 +48,22 @@ with open(csvpath) as csvfile:
             elif i == candidateList[2]:
                 counterRaymon += [i]
         
-        #len counter for vote counts & vote count/total ballots for %
-        totalCharles = len(counterCharles)
-        percentCharles = round((totalCharles/totalBallots)*100, 3)
+    #len counter for vote counts & vote count/total ballots for %
+    totalCharles = len(counterCharles)
+    percentCharles = round((totalCharles/totalBallots)*100, 3)
 
-        totalDiana = len(counterDiana)
-        percentDiana = round((totalDiana/totalBallots)*100, 3)
+    totalDiana = len(counterDiana)
+    percentDiana = round((totalDiana/totalBallots)*100, 3)
 
-        totalRaymon = len(counterRaymon)
-        percentRaymon = round((totalRaymon/totalBallots)*100, 3)
+    totalRaymon = len(counterRaymon)
+    percentRaymon = round((totalRaymon/totalBallots)*100, 3)
 
-
-    
+    #to find winner
+    totalslist = [totalCharles, totalDiana, totalRaymon]
+    winnerVal = max(totalslist)
+    for i in totalslist:
+        if totalslist[i] == winnerVal:
+            winner = totalslist[i]
 
 
     print(f"Total Votes: {totalBallots}")
@@ -68,6 +72,6 @@ with open(csvpath) as csvfile:
     print(f"{candidateList[1]}: {percentDiana}% ({totalDiana})")
     print(f"{candidateList[2]}: {percentRaymon}% ({totalRaymon})")
     print("----------------------------")
-    print(f"Winner: ")
+    print(f"Winner: {winner}")
     print("----------------------------")
 
