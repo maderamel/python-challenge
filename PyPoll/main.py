@@ -76,3 +76,17 @@ with open(csvpath) as csvfile:
     print(f"Winner: {winner}")
     print("----------------------------")
 
+    #create output file
+    output = (
+        f"Total Votes: {totalBallots}\n"
+        f"----------------------------\n"
+        f"{candidateList[0]}: {percentCharles}% ({totalCharles})\n"
+        f"{candidateList[1]}: {percentDiana}% ({totalDiana})\n"
+        f"{candidateList[2]}: {percentRaymon}% ({totalRaymon})\n"
+        f"----------------------------\n"
+        f"Winner: {winner}\n"
+        f"----------------------------"
+        )
+    
+    with open("analysis/PyPoll_txt", 'w') as txtfile:
+        txtfile.write(output)
