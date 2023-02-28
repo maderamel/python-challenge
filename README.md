@@ -30,4 +30,6 @@ Terminal Results
 
 Text File Results
 
+![This is a screenshot of PyPoll results in a text file](https://github.com/maderamel/python-challenge/blob/2ee8c6eed4256a4dd2990cf439528f020c412d67/PyPoll/Resources/PyPoll_txtfile.png)
+
 After running the code the above results were acheived. 
