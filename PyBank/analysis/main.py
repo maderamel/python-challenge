@@ -70,5 +70,5 @@ with open(csvpath) as csvfile:
         f"Greatest Increase in Profits: {maxMonth} (${maxInc})"
         f"Greatest Decrease in Profits: {minMonth} (${maxDec})"
         )
-    with open('PyBank_txt', 'w') as txtfile:
-        txtfile.write(output)
+    PyBank_txt = open(".analysis/PyBank_txt", 'w') 
+    PyBank_txt.write(output)
