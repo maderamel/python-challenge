@@ -64,11 +64,11 @@ with open(csvpath) as csvfile:
     
     #create output file
     output = (
-        f"Total Months: {totalMonths}"
-        f"Total: ${totalPL}"
-        f"Average Change: {average}"
-        f"Greatest Increase in Profits: {maxMonth} (${maxInc})"
-        f"Greatest Decrease in Profits: {minMonth} (${maxDec})"
+        f"Total Months: {totalMonths}\n"
+        f"Total: ${totalPL}\n"
+        f"Average Change: {average}\n"
+        f"Greatest Increase in Profits: {maxMonth} (${maxInc})\n"
+        f"Greatest Decrease in Profits: {minMonth} (${maxDec})\n"
         )
-    with open(PyBank_txt, 'w') as txtfile:
+    with open("analysis/PyBank_txt", 'w') as txtfile:
         txtfile.write(output)
