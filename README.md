@@ -20,6 +20,8 @@ Terminal Results
 
 Text File Results
 
+![This is a screenshot of PyBank results in a text file](https://github.com/maderamel/python-challenge/blob/1bdb8281adb749426e335b349f7c46532dbba460/PyBank/Resources/PyBank_txtfile.png)
+
 **PyPoll**
 
 Terminal Results
