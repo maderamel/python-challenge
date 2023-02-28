@@ -58,7 +58,7 @@ with open(csvpath) as csvfile:
     #print analysis
     print(f"Total Months: {totalMonths}")
     print(f"Total: ${totalPL}")
-    print(f"Average Change: {average}")
+    print(f"Average Change: ${average}")
     print(f"Greatest Increase in Profits: {maxMonth} (${maxInc})")
     print(f"Greatest Decrease in Profits: {minMonth} (${maxDec})")
     
@@ -68,7 +68,7 @@ with open(csvpath) as csvfile:
         f"----------------------------\n"
         f"Total Months: {totalMonths}\n"
         f"Total: ${totalPL}\n"
-        f"Average Change: {average}\n"
+        f"Average Change: ${average}\n"
         f"Greatest Increase in Profits: {maxMonth} (${maxInc})\n"
         f"Greatest Decrease in Profits: {minMonth} (${maxDec})\n"
         )
