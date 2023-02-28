@@ -64,6 +64,8 @@ with open(csvpath) as csvfile:
     
     #create output file
     output = (
+        f"Financial Analysis\n"
+        f"----------------------------\n"
         f"Total Months: {totalMonths}\n"
         f"Total: ${totalPL}\n"
         f"Average Change: {average}\n"
