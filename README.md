@@ -16,7 +16,7 @@ For each csv file, the code needed to:
 
 Terminal Results
 
-![This is a screenshot of PyBank results in terminal](https://github.com/maderamel/python-challenge/blob/d620e24853e98f98059abd4314c7879dcae1376a/PyBank/Resources/PyBank_Terminal.png)
+![This is a screenshot of PyBank results in terminal](https://github.com/maderamel/python-challenge/blob/747ae8f6ea6fa7b4e88b1f3e40f212a71be90747/PyBank/Resources/PyBank_Terminal.png)
 
 Text File Results
 
